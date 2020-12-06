@@ -16,4 +16,15 @@ nav{
             color: whitesmoke;
         }
     }
+    .brand-name{
+        display: flex;
+        flex-direction: row;
+        h1{
+            color: #e48e66;
+        }
+        
+        img{
+            height: 4rem;
+        }
+    }
 }

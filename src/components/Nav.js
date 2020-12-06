@@ -8,7 +8,10 @@ const Nav = ({ libraryState, setLibraryState }) => {
     };
 
     return (<nav>
-        <h1>Rythm</h1>
+        <div className='brand-name'>
+            <img src={process.env.PUBLIC_URL + "logo512.png"} alt='Rythm Logo' />
+            <h1>Rythm</h1>
+        </div>
         <button onClick={toggleLibraryState}>Library<FontAwesomeIcon icon={faMusic} ></FontAwesomeIcon></button>
     </nav>);
 }
