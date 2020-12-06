@@ -5,9 +5,10 @@ import { activeSong } from './util';
 
 const Player = ({ audioRef, songs, setSongs, songInfo, setSongInfo, currentSong, setCurrentSong, isPlaying, setIsPlaying }) => {
 
-    const songChanged = () => {
+    const songChanged = (index) => {
 
-        setSongs(activeSong(songs, currentSong));
+
+        setSongs(activeSong(songs, songs[index]));
         if (isPlaying) audioRef.current.play();
     };
 
@@ -43,11 +44,11 @@ const Player = ({ audioRef, songs, setSongs, songInfo, setSongInfo, currentSong,
 
         if (direction === 'skip-forward' && songs.length !== currentIndex + 1) {
             await setCurrentSong(songs[currentIndex + 1]);
-            songChanged();
+            songChanged(currentIndex + 1);
         }
         else if (direction === 'skip-back' && currentIndex - 1 >= 0) {
             await setCurrentSong(songs[currentIndex - 1]);
-            songChanged();
+            songChanged(currentIndex - 1);
         }
     };
     const animationPercentage = (songInfo.currentTime / songInfo.duration) * 100;

@@ -33,9 +33,10 @@ function App() {
     const currentIndex = songs.findIndex((song) => song.id === currentSong.id);
     if (songs.length !== currentIndex + 1) {
       await setCurrentSong(songs[currentIndex + 1]);
+      setSongs(activeSong(songs, songs[currentIndex + 1]));
     }
     if (isPlaying) audioRef.current.play();
-    setSongs(activeSong(songs, currentSong))
+
   }
 
   return (
