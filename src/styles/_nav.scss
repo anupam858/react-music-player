@@ -8,18 +8,23 @@ nav{
         background: transparent;
         border:none;
         font-size: 1.5rem;
+        font-weight: 200;
         padding: 0.5rem;
         cursor: pointer;
-
+        transition: all cubic-bezier(0.165, 0.84, 0.44, 1);
         &:hover{
             background: rgb(44, 43, 43);
             color: whitesmoke;
         }
+
+    }
+    .elevate{
+        z-index: 10;
     }
     .brand-name{
         display: flex;
         flex-direction: row;
-        h1{
+        h2{
             color: #e48e66;
         }
         

@@ -10,9 +10,9 @@ const Nav = ({ libraryState, setLibraryState }) => {
     return (<nav>
         <div className='brand-name'>
             <img src={process.env.PUBLIC_URL + "logo512.png"} alt='Rythm Logo' />
-            <h1>Rythm</h1>
+            <h2>Rythm</h2>
         </div>
-        <button onClick={toggleLibraryState}>Library<FontAwesomeIcon icon={faMusic} ></FontAwesomeIcon></button>
+        <button onClick={toggleLibraryState} className={`${libraryState ? 'elevate' : ''}`}>{`${!libraryState ? "Library" : "Close"}`}<FontAwesomeIcon icon={faMusic} ></FontAwesomeIcon></button>
     </nav>);
 }
 
